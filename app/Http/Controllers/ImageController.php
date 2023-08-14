@@ -12,5 +12,10 @@ class ImageController extends Controller
         ]);
 
         $request->image->storeAs('/images','new_image.jpg');
+
+        return redirect(route('success'));
+    }
+    public function download(){
+        return response()->download(public_path('/storage/images/new_image.jpg'));
     }
 }

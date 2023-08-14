@@ -25,6 +25,10 @@ Route::get('/home', [HomeController::class, '__invoke']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/register', [RegistrationController::class, 'index'])->name('register');
+Route::get('/success', function(){
+    return '<h1>Successfully Uploaded</h1>';
+})->name('success');
+Route::get('/download', [ImageController::class, 'download'])->name('download');
 
 Route::post('/upload_file', [ImageController::class, 'handleImage'])->name('upload-file');
 Route::post('/login', [LoginController::class, 'handleLogin'])->name('login.submit');
